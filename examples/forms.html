@@ -2,7 +2,7 @@
 <head>
     <meta name="viewport" content="width=500">
     <meta charset="utf-8">
-    <meta name="color-scheme" content="dark light">
+    <meta name="color-scheme" content="light">
     <style>
         @media (prefers-color-scheme: light) {
             body {
@@ -19,6 +19,12 @@
         body {
             font-family: system-ui;
             -webkit-text-size-adjust: none;
+            background: #FFFCEA;
+        }
+
+        input[type=date], input[type=datetime-local] {
+            margin-bottom: 200px;
+            margin-left: 100px;
         }
 
         div.meter {
@@ -235,6 +241,15 @@
         <div class="meter"><meter min="0" max="100" low="33" high="66" optimum="80" value="30"></meter></div>
         <div class="meter"><meter min="0" max="100" low="33" high="66" optimum="80" value="50"></meter></div>
         <div class="meter"><meter min="0" max="100" low="33" high="66" optimum="80" value="90"></meter></div>
+
+    <p>Date</p>
+        <input type="date" value="2021-06-07">
+
+    <p>Time</p>
+        <input type="time" value="10:00">
+
+    <p>Datetime</p>
+        <input type="datetime-local" value="2021-06-07T10:00">
 </body>
 
 </html>
