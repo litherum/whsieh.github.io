@@ -1,11 +1,28 @@
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=500">
     <meta charset="utf-8">
     <meta name="color-scheme" content="dark light">
     <style>
+        @media (prefers-color-scheme: light) {
+            body {
+                background: #FFFCEA;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #2A2A2F;
+            }
+        }
+
         body {
             font-family: system-ui;
+            -webkit-text-size-adjust: none;
+        }
+
+        div.meter {
+            margin-bottom: 5px;
         }
 
         #toggle {
@@ -58,12 +75,12 @@
 
 <body>
     <p>Checkboxes</p>
-    <input type="checkbox" style="font-size: 7px;" />
-    <input id="second" type="checkbox" style="font-size: 13px;" />
+    <input type="checkbox" checked style="font-size: 7px;" />
+    <input id="second" checked type="checkbox" style="font-size: 13px;" />
     <input type="checkbox" style="font-size: 16px;" />
 
     <p>Radio buttons</p>
-    <input type="radio" name="testing" style="font-size: 7px;" />
+    <input type="radio" checked name="testing" style="font-size: 7px;" />
     <input type="radio" name="testing" style="font-size: 13px;" />
     <input type="radio" name="testing" style="font-size: 16px;" />
 
@@ -202,27 +219,22 @@
     </select>
 
     <p>Range</p>
-    <input value="0" type="range" name="points" min="0" max="10">
-    <input value="0" type="range" name="points" min="0" max="10" style="-webkit-appearance: slider-vertical;">
+    <input value="5" type="range" name="points" min="0" max="10" style="-webkit-appearance: slider-vertical;">
+    <input value="5" type="range" name="points" min="0" max="10" style="vertical-align: 60px;">
 
     <p>File upload</p>
     <input type="file"></input>
 
     <p>Progress</p>
-    <ul>
-        <li><progress min="0" max="100" value="0"></progress> 0%</li>
-        <li><progress min="0" max="100" value="50"></progress> 50%</li>
-        <li><progress min="0" max="100" value="100"></progress> 100%</li>
-        <li><progress></progress> --</li>
-    </ul>
+        <div><progress min="0" max="100" value="0"></progress> 0%</div>
+        <div><progress min="0" max="100" value="50"></progress> 50%</div>
+        <div><progress min="0" max="100" value="100"></progress> 100%</div>
+        <!--div><progress></progress> --</div-->
 
-    <p>Custom toggle</p>
-    <span id="toggle">
-        <input checked="true" value="yes" type="radio" id="yes" name="toggle">
-        <label for="yes">Yes</label>
-        <input value="no" type="radio" id="no" name="toggle">
-        <label for="no">No</label>
-    </span>
+    <p>Meter</p>
+        <div class="meter"><meter min="0" max="100" low="33" high="66" optimum="80" value="30"></meter></div>
+        <div class="meter"><meter min="0" max="100" low="33" high="66" optimum="80" value="50"></meter></div>
+        <div class="meter"><meter min="0" max="100" low="33" high="66" optimum="80" value="90"></meter></div>
 </body>
 
 </html>
