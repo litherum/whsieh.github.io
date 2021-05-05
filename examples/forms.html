@@ -2,11 +2,11 @@
 <head>
     <meta name="viewport" content="width=500">
     <meta charset="utf-8">
-    <meta name="color-scheme" content="light">
+    <meta name="color-scheme" content="light dark">
     <style>
         @media (prefers-color-scheme: light) {
             body {
-                background: #FFFCEA;
+                background: #F9F9F8;
             }
         }
 
@@ -19,12 +19,16 @@
         body {
             font-family: system-ui;
             -webkit-text-size-adjust: none;
-            background: #FFFCEA;
         }
 
-        input[type=date], input[type=datetime-local] {
-            margin-bottom: 200px;
-            margin-left: 100px;
+        input[type=date], input[type=time], input[type=month], input[type=datetime-local] {
+            /* margin: 200px;
+            margin-right: 0px; */
+        }
+
+        input[list=fruits2] {
+            margin: 200px;
+            margin-right: 0px;
         }
 
         div.meter {
@@ -117,8 +121,10 @@
     <div><input type="text" placeholder="Text"></input><input type="password" placeholder="Password"></input></div>
     <div><input type="email" placeholder="Email"></input><input type="tel" placeholder="Telephone"></input></div>
     <div><input type="url" placeholder="URL"></input><input type="number" placeholder="Number"></input></div>
+
+    <p>Date and time inputs</p>
     <div><input type="date" placeholder="Date" value="1976-04-01"></input><input type="time" placeholder="Time" value="09:41"></input></div>
-    <div><input type="month" placeholder="Month" value="2015-07"></input></div>
+    <div><input type="month" placeholder="Month" value="2015-07"></input><input type="datetime-local" value="2021-06-07T10:00"></input></div>
 
     <p>Input Mode</p>
     <div><input placeholder="Telephone" inputmode="tel"><input placeholder="URL" inputmode="url"></div>
@@ -149,20 +155,12 @@
                 <option value="Watermelon"></option>
             </select>
         </datalist>
-        <input type="search" placeholder="Fruits (2)" list="fruits2">
+        <input type="search" placeholder="Fruits" list="fruits2">
         <datalist id="fruits2">
             <select>
                 <option value="Apple">It’s an apple</option>
                 <option value="Apricot">It’s an apricot</option>
                 <option value="Banana">It’s a banana</option>
-                <option value="Cantaloupe">It’s a cantaloupe</option>
-                <option value="Durian">It’s a durian</option>
-                <option value="Grape">It’s a grape</option>
-                <option value="Guava">It’s a guava</option>
-                <option value="Orange">It’s an orange</option>
-                <option value="Mango">It’s a mango</option>
-                <option value="Pear">It’s a pear</option>
-                <option value="Watermelon">It’s a watermelon</option>
             </select>
         </datalist>
         <input type="search" placeholder="Fruits (3)" list="fruits3">
@@ -188,33 +186,14 @@
     <input type="search" placeholder="keyword"></input>
 
     <p>Select</p>
+    <div style="margin: 200px; margin-right: 0px;">
     <select name="select">
         <option value="value1">First</option>
         <option value="value2">Second</option>
         <option value="value3">Third</option>
-        <option value="value4">Fourth</option>
-        <option value="value5">Fifth</option>
-        <option value="value6">Sixth</option>
-        <option value="value7">Seventh</option>
-        <option value="value8">Eight</option>
-        <option value="value9">Ninth</option>
-        <option value="value10">Tenth</option>
-        <option value="value11">Eleventh</option>
-        <option value="value12">Twelfth</option>
-        <option value="value13">Thirteenth</option>
-        <option value="value14">Fourteenth</option>
-        <option value="value15">Fifteenth</option>
-        <option value="value16">Sixteenth</option>
-        <option value="value17">Seventeenth</option>
-        <option value="value18">Eighteenth</option>
-        <option value="value19">Ninteenth</option>
-        <option value="value20">Twentieth</option>
-        <option value="value21">Twenty-first</option>
-        <option value="value22">Twenty-second</option>
-        <option value="value23">Twenth-third</option>
-        <option value="value24">Twenth-fourth</option>
-        <option value="value25">Twenth-fifth</option>
     </select>
+    </div>
+    <div style="margin: 200px; margin-right: 0px;">
     <select name="select" multiple>
         <option value="value1">First</option>
         <option value="value2">Second</option>
@@ -223,6 +202,7 @@
         <option value="value5">Fifth</option>
         <option value="value6">Sixth</option>
     </select>
+    </div>
 
     <p>Range</p>
     <input value="5" type="range" name="points" min="0" max="10" style="-webkit-appearance: slider-vertical;">
@@ -240,16 +220,7 @@
     <p>Meter</p>
         <div class="meter"><meter min="0" max="100" low="33" high="66" optimum="80" value="30"></meter></div>
         <div class="meter"><meter min="0" max="100" low="33" high="66" optimum="80" value="50"></meter></div>
-        <div class="meter"><meter min="0" max="100" low="33" high="66" optimum="80" value="90"></meter></div>
-
-    <p>Date</p>
-        <input type="date" value="2021-06-07">
-
-    <p>Time</p>
-        <input type="time" value="10:00">
-
-    <p>Datetime</p>
-        <input type="datetime-local" value="2021-06-07T10:00">
+        <div class="meter" style="margin-bottom: 100px;"><meter min="0" max="100" low="33" high="66" optimum="80" value="90"></meter></div>
 </body>
 
 </html>
